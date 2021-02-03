@@ -83,7 +83,14 @@ public abstract class MultiController extends HttpServlet {
 		
 		try {
 			
-			return Integer.parseInt(req.getParameter(name));
+			String value = req.getParameter(name);
+			
+			if(value== null || value.trim().length() == 0) {
+				return defaultValue;
+			}
+			
+			
+			return Integer.parseInt(value);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return defaultValue;

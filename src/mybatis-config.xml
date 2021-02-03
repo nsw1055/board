@@ -18,7 +18,7 @@
 				<property name="driver"
 					value="oracle.jdbc.driver.OracleDriver" />
 				<property name="url"
-					value="jdbc:oracle:thin:@192.168.0.24:1521:XE" />
+					value="jdbc:oracle:thin:@175.117.99.163:1521:XE" />
 				<property name="username" value="dclub" />
 				<property name="password" value="dclub" />
 			</dataSource>

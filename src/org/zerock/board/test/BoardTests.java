@@ -6,8 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.zerock.board.dao.BoardDAO;
 import org.zerock.board.domain.Board;
-import org.zerock.board.domain.PageInfo;
 import org.zerock.common.dao.MyBatisMaker;
+import org.zerock.common.util.PageInfo;
+import org.zerock.common.util.PageMaker;
 
 import lombok.extern.log4j.Log4j;
 
@@ -74,5 +75,16 @@ public class BoardTests {
 		
 		dao.update(board);
 		log.info(board);
+	}
+	
+	@Test
+	public void testPaging() {
+		int total = 200;
+		PageInfo pageInfo = new PageInfo();
+		
+		pageInfo.setPage(11);
+		PageMaker pageMaker = new PageMaker(pageInfo, total);
+		
+		log.info(pageMaker);
 	}
 }

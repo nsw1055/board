@@ -28,6 +28,19 @@
   </tbody>
 </table>
 
+ <ul class="pagination">
+ 	<c:if test="${pageMaker.prev}">
+    <li class="page-item"><a class="page-link" href="/board/list?page=${pageMaker.start-1}">Previous</a></li>
+ 	</c:if>
+   
+    <c:forEach begin="${pageMaker.start}" end="${pageMaker.end}" var="num">    
+    <li class="page-item ${num == pageMaker.pageInfo.page? 'active' : '' }"><a class="page-link" href="/board/list?page=${num}">${num}</a></li> 
+    </c:forEach>
+    
+    <c:if test="${pageMaker.next}">
+    <li class="page-item"><a class="page-link" href="/board/list?page=${pageMaker.end+1}">Next</a></li>
+    </c:if>
+  </ul>
 
 
 

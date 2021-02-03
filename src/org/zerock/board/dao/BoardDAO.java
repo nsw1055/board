@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.zerock.board.domain.Board;
-import org.zerock.board.domain.PageInfo;
 import org.zerock.common.dao.MyBatisMaker;
+import org.zerock.common.util.PageInfo;
 
 
 
@@ -35,6 +35,19 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public int getTotal() {
+		
+		try (SqlSession session = MyBatisMaker.INSTANCE.getFactory().openSession()) {
+
+			return session.selectOne(NAMESPACE + ".getTotal");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+		
 	}
 
 	public void insert(Board board) {

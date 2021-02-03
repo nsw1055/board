@@ -1,7 +1,9 @@
-package org.zerock.board.domain;
+package org.zerock.common.util;
 
+import lombok.Getter;
 import lombok.Builder.Default;
 
+@Getter
 public class PageInfo {
 	
 	@Default
@@ -32,6 +34,7 @@ public class PageInfo {
 		
 		this.perSheet = perSheet;
 	}
+	
 	
 	
 	

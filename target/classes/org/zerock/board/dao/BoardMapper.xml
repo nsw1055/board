@@ -49,4 +49,8 @@ where bno = #{bno}
  ]]>
   </update>
   
+  
+  <select id="getTotal" resultType="int">
+  select count(bno) from tbl_board
+  </select>
 </mapper>
